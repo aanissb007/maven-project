@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build'){
             tools {
-                maven 'locamMaven'
+                maven 'localMaven'
             }
             steps {
                 sh 'mvn clean package'

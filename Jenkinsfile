@@ -30,13 +30,13 @@ pipeline {
             parallel{
                 stage ('Deployment to Staging'){
                     steps {
-                        sh "scp -i /Users/suresh/Downloads/TomcatDemo.pem **/target/*.war ec2-user@{params.tomcat_dev}:/var/lib/tomcat7/webapps"
+                        sh "scp -i /Users/suresh/Downloads/TomcatDemo.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
                     }
                 }
 
                 stage ('Deployment to Production'){
                     steps {
-                        sh "scp -i /Users/suresh/Downloads/TomcatDemo.pem **/target/*.war ec2-user@{params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                        sh "scp -i /Users/suresh/Downloads/TomcatDemo.pem **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
                     }
                 }
 

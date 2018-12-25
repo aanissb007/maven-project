@@ -4,14 +4,14 @@ pipeline {
     tools {
         maven 'localMaven'
     }
-    parameters {
-        string(name: 'tomcat_dev',defaultValue:'18.207.188.242',description:'Staging Server')
-        string(name: 'tomcat_prod',defaultValue:'3.82.105.238',description:'Production Server')
-    }
+    // parameters {
+    //     string(name: 'tomcat_dev',defaultValue:'18.207.188.242',description:'Staging Server')
+    //     string(name: 'tomcat_prod',defaultValue:'3.82.105.238',description:'Production Server')
+    // }
     
-    triggers {
-        pollSCM('* * * * *')
-    }
+    // triggers {
+    //     pollSCM('* * * * *')
+    // }
     stages { 
 
          stage('Build'){
